@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.home-container {
+  min-height: 100vh;
+  background: #0a0e1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+}
+.c1 { width: 500px; height: 500px; background: #4f46e5; top: -100px; left: -100px; }
+.c2 { width: 400px; height: 400px; background: #7c3aed; bottom: -80px; right: -80px; }
+.c3 { width: 300px; height: 300px; background: #2563eb; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+.home-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.home-header { margin-bottom: 48px; }
+
+.logo-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 20px rgba(99,102,241,0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.home-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-subtitle {
+  font-size: 16px;
+  color: #94a3b8;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+.header-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  margin: 24px auto 0;
+  border-radius: 2px;
+}
+
+.choose-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.choose-subtitle {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 640px) {
+  .role-cards { grid-template-columns: 1fr; }
+  .home-title { font-size: 44px; }
+}
+
+.role-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  backdrop-filter: blur(10px);
+}
+
+.role-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.08);
+  box-shadow: 0 20px 60px rgba(99,102,241,0.15);
+}
+
+.student-card:hover { border-color: rgba(99,102,241,0.4); }
+.teacher-card:hover { border-color: rgba(124,58,237,0.4); }
+
+.role-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.role-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #f1f5f9;
+  margin-bottom: 12px;
+}
+
+.role-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.role-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.role-features span {
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.role-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.student-btn {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+
+.student-btn:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  box-shadow: 0 8px 25px rgba(79,70,229,0.4);
+}
+
+.teacher-btn {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  color: #fff;
+}
+
+.teacher-btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  box-shadow: 0 8px 25px rgba(124,58,237,0.4);
+}
+
+.home-footer {
+  color: #1e293b;
+  font-size: 13px;
+}
